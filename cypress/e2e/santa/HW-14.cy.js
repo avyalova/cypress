@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe("example to-do app", () => {
+describe("Access app", () => {
   before(() => {
     cy.visit("https://staging.lpitko.ru")
   })
