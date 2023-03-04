@@ -170,7 +170,8 @@
   },
   "scripts": {
     "cy:open": "npx cypress open",
-    "cy:run": "npx cypress run"
+    "cy:run": "npx cypress run",
+    "cy:dashboard": "dashboard run"
   },
   "repository": {
     "type": "git",
