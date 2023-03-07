@@ -3,8 +3,8 @@
 describe("Access app", () => {
   beforeEach(() => {
     cy.visit("/login")
-    cy.get("input[name=email]").type("anna_vyalova@yahoo.com")
-    cy.get("input[name=password]").type("123456").type("{enter}")
+    cy.get("input[name=email]").type(Cypress.env("email"))
+    cy.get("input[name=password]").type(Cypress.env("password")).type("{enter}")
     cy.get(".btn-main").click()
   })
 
