@@ -171,7 +171,7 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:dashboard": "dashboard run",
+    "cy:dashboard": "npx cypress run --record --key 9bb2f1c8-3c3e-4d67-84e2-e0695ccbb514",
     "cy:prod": "npx cypress open --env email=ja_rus-89@mail.ru,password=123456 --config baseUrl=https://santa-secret.ru/"
   },
   "repository": {
