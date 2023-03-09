@@ -175,7 +175,8 @@
     "cy:prod": "npx cypress open --env email=ja_rus-89@mail.ru,password=123456 --config baseUrl=https://santa-secret.ru/",
     "cy:run:chrome": "npx cypress run --browser chrome --spec 'cypress/e2e/HW-14.cy.js'",
     "cy:run:electron": "npx cypress run --browser electron --spec 'cypress/e2e/HW-14-2.cy.js'",
-    "cy:run:all": "npm run cy:run:chrome && npm run cy:run:electron && npm run cy:dashboard"
+    "cy:run:all": "npm run cy:run:chrome && npm run cy:run:electron",
+    "cy:run:all:dash": "npm run cy:run:chrome -- --record --key 9bb2f1c8-3c3e-4d67-84e2-e0695ccbb514 && npm run cy:run:electron -- --record --key 9bb2f1c8-3c3e-4d67-84e2-e0695ccbb514"
   },
   "repository": {
     "type": "git",
