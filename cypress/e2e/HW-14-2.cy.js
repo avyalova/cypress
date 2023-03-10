@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
 describe("example to-do app", () => {
-  before(() => {
-    cy.visit("https://staging.lpitko.ru")
+  beforeEach(() => {
+    cy.visit("/")
   })
 
   it("displays the site", () => {

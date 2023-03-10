@@ -3,9 +3,7 @@
 describe("Access app", () => {
   beforeEach(() => {
     cy.visit("/login")
-    cy.get("input[name=email]").type(Cypress.env("email"))
-    cy.get("input[name=password]").type(Cypress.env("password")).type("{enter}")
-    cy.get(".btn-main").click()
+    cy.login(Cypress.env("email"), Cypress.env("password"))
   })
 
   it("Check Boxes", () => {
