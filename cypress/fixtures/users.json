@@ -1,0 +1,38 @@
+[
+  {
+    "user": {
+      "username": "Анна",
+      "email": "anna_vyalova+test1@yahoo.com",
+      "password": "123456"
+    }
+  },
+
+  {
+    "user": {
+      "username": "AnnaПраПраПа1234598698795878-8-5",
+      "email": "anna_vyalova+test2@yahoo.com",
+      "password": "123456"
+    }
+  },
+  {
+    "user": {
+      "username": "*&&^%",
+      "email": "anna_vyalova+test3@yahoo.com",
+      "password": "123456"
+    }
+  },
+  {
+    "user": {
+      "username": "GGggg",
+      "email": "anna_vyalova+test4@yahoo.com",
+      "password": "123456"
+    }
+  },
+  {
+    "user": {
+      "username": "Ak",
+      "email": "anna_vyalova+test5@yahoo.com",
+      "password": "123456"
+    }
+  }
+]

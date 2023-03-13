@@ -23,9 +23,19 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+const regPage = require("../fixtures/regPage.json")
+const loginPage = require("../fixtures/loginPage.json")
+
 Cypress.Commands.add("login", (email, password) => {
-  //cy.visit("/")
-  cy.get(":nth-child(3) > .frm").type(email)
-  cy.get(":nth-child(4) > .frm").type(password)
-  cy.get(".btn-main").click()
+  //cy.visit("/login")
+  cy.get(loginPage.emailField).type(email)
+  cy.get(loginPage.paswordField).type(password)
+  cy.get(loginPage.enterButton).click()
+})
+
+Cypress.Commands.add("register", (name, email) => {
+  //cy.visit("/register")
+  cy.get(regPage.nameField).type(name)
+  cy.get(regPage.emailField).type(email)
+  cy.get(regPage.registButton).click()
 })
