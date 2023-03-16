@@ -28,8 +28,8 @@ const loginPage = require("../fixtures/loginPage.json")
 
 Cypress.Commands.add("login", (email, password) => {
   //cy.visit("/login")
-  cy.get(loginPage.emailField).type(email)
-  cy.get(loginPage.paswordField).type(password)
+  cy.get(loginPage.emailField).clear().type(email)
+  cy.get(loginPage.paswordField).clear().type(password)
   cy.get(loginPage.enterButton).click()
 })
 
@@ -38,4 +38,15 @@ Cypress.Commands.add("register", (name, email) => {
   cy.get(regPage.nameField).type(name)
   cy.get(regPage.emailField).type(email)
   cy.get(regPage.registButton).click()
+})
+
+Cypress.Commands.add("changePassword", (newPassword) => {
+  cy.get(
+    '.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href="/account"] > .header-item > .header-item__text > .txt--med'
+  ).click()
+  cy.get(".layout-column-start > :nth-child(1) > .frm").type(newPassword)
+  cy.get(
+    ":nth-child(4) > .form-page-group__main > .layout-column-start > :nth-child(2) > .frm"
+  ).type(newPassword)
+  cy.get(".layout-row-end > .btn-service").click()
 })
