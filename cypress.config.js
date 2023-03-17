@@ -8,7 +8,9 @@ module.exports = defineConfig({
     password: "123456",
   },
   e2e: {
-    baseUrl: "https://staging.lpitko.ru/",
+    baseUrl: "https://staging.lpitko.ru",
+    pageLoadTimeout: 30000,
+    defaultCommandTimeout: 10000,
     watchForFileChanges: false,
     setupNodeEvents(on, config) {
       // implement node event listeners here
