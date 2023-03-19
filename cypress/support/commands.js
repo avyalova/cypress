@@ -23,8 +23,74 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import { faker } from "@faker-js/faker"
 const regPage = require("../fixtures/regPage.json")
 const loginPage = require("../fixtures/loginPage.json")
+
+Cypress.Commands.add("loginAPI", (userEmail, userPassword) => {
+  cy.request({
+    method: "POST",
+    headers: {
+      Cookie:
+        "connect.sid=s%3ACkRrHPqSPLTu63an7a8NxHudkxQXCLd7.3wq3k9vpZHfcMGwdCeSUyS0Ma0FxIhfG0M%2Bl1o9GNLg",
+    },
+    url: "https://staging.lpitko.ru/api/login",
+    body: { email: userEmail, password: userPassword },
+  })
+})
+
+Cypress.Commands.add("createBox", (idBox, boxName) => {
+  cy.request({
+    method: "POST",
+    url: "/api/box",
+    body: {
+      cashLimit: null,
+      cashLimitCurrency: null,
+      createAdminCard: null,
+      email: null,
+      isArchived: null,
+      isCreated: true,
+      isInviteAfterDraw: null,
+      isPhoneRequired: false,
+      key: idBox,
+      logo: null,
+      name: boxName,
+      picture: "santa",
+      useCashLimit: null,
+      useCircleDraw: null,
+      useNames: true,
+      usePost: false,
+      useWish: true,
+    },
+  })
+})
+
+Cypress.Commands.add("editBox", (idBox) => {
+  const newNameBox = faker.word.noun(6)
+  cy.request({
+    method: "POST",
+    url: "/api/box",
+    body: {
+      cashLimit: null,
+      cashLimitCurrency: null,
+      createAdminCard: null,
+      email: null,
+      isArchived: null,
+      isCreated: null,
+      isInviteAfterDraw: null,
+      isPhoneRequired: false,
+      key: idBox,
+      logo: null,
+      name: newNameBox,
+      picture: "cup_cake",
+      useCashLimit: null,
+      useCircleDraw: null,
+      useNames: true,
+      usePost: false,
+      useWish: true,
+    },
+  })
+})
 
 Cypress.Commands.add("login", (email, password) => {
   //cy.visit("/login")
